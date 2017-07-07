@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>show</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul {
+            list-style: none;
+            cursor: default;
+            background: red;
+            width: 150px;
+        }
+        
+        ul li {
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            line-height: 30px;
+            padding-left: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .arrow {
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-left: 10px solid #fff;
+            border-bottom: 5px solid transparent;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        
+        .arrow::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-left: 10px solid red;
+            border-bottom: 5px solid transparent;
+            position: absolute;
+            top: -5px;
+            right: 3px;
+            bottom: 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #e6e6e6;
+        }
+        
+        .sec {
+            display: none;
+            width: 100px;
+            position: absolute;
+            right: -112px;
+            top: 0;
+            border: 1px solid #aaa;
+            padding-left: 10px;
+        }
+        
+        .sec a {
+            color: #444;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            width: 40%;
+        }
+    </style>
+</head>
+
+
+<body>
+    <ul>
+
+        <li>珠宝玉器
+            <div class="arrow"></div>
+            <div class="sec">
+                <a href="">珍珠</a>
+                <a href="">翡翠</a>
+                <a href="">玛瑙</a>
+                <a href="">水晶</a>
+            </div>
+        </li>
+        <li>珠宝玉器
+            <div class="arrow"></div>
+            <div class="sec">
+                <a href="">珍珠</a>
+                <a href="">翡翠</a>
+                <a href="">玛瑙</a>
+                <a href="">水晶</a>
+            </div>
+        </li>
+        <li>珠宝玉器
+            <div class="arrow"></div>
+            <div class="sec">
+                <a href="">珍珠</a>
+                <a href="">翡翠</a>
+                <a href="">玛瑙</a>
+                <a href="">水晶</a>
+                <a href="">花花</a>
+                <a href="">草草</a>
+
+            </div>
+        </li>
+        <li>珠宝玉器
+            <div class="arrow"></div>
+            <div class="sec">
+                <a href="">珍珠</a>
+                <a href="">翡翠</a>
+                <a href="">玛瑙</a>
+                <a href="">水晶</a>
+            </div>
+        </li>
+        <li>珠宝玉器
+            <div class="arrow"></div>
+            <div class="sec">
+                <a href="">珍珠</a>
+                <a href="">翡翠</a>
+                <a href="">玛瑙</a>
+                <a href="">水晶</a>
+                <a href="">花花</a>
+                <a href="">草草</a>
+            </div>
+        </li>
+
+    </ul>
+
+
+</body>
+<script src="../jquery.min.js"></script>
+<script>
+    $('ul li').on('mousemove', function() {
+        $(this).children('.sec').show()
+    })
+    $('ul li').on('mouseout', function() {
+        $(this).children('.sec').hide()
+    })
+</script>
+
+</html>
