@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>task14-9</title>
+    <link rel="stylesheet" type="" href="./style2.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <script src="../jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="panel-ct" style="border:none;">
+            <li class="panel active">
+                <ul>
+                    <li>
+                        <div class="cover">
+                            <a href="#">点击购买</a>
+                        </div>
+                        <img src="./img/img1.jpg" alt="">
+                        <p class="goods-name">藏美千足金和田玉金镶玉路路通吊坠</p>
+                        <p class="goods-price">￥10000.00</p>
+                    </li>
+
+                    <li>
+                        <div class="cover">
+                            <a href="#">点击购买</a>
+                        </div>
+                        <img src="./img/img1.jpg" alt="">
+                        <p class="goods-name">藏美千足金和田玉金镶玉路路通吊坠</p>
+                        <p class="goods-price">￥10000.00</p>
+                    </li>
+                    <li>
+                        <div class="cover">
+                            <a href="#">点击购买</a>
+                        </div>
+                        <img src="./img/img1.jpg" alt="">
+                        <p class="goods-name">藏美千足金和田玉金镶玉路路通吊坠</p>
+                        <p class="goods-price">￥10000.00</p>
+                    </li>
+                    <li>
+                        <div class="cover">
+                            <a href="#">点击购买</a>
+                        </div>
+                        <img src="./img/img1.jpg" alt="">
+                        <p class="goods-name">藏美千足金和田玉金镶玉路路通吊坠</p>
+                        <p class="goods-price">￥10000.00</p>
+                    </li>
+                    <li>
+                        <div class="cover">
+                            <a href="#">点击购买</a>
+                        </div>
+                        <img src="./img/img1.jpg" alt="">
+                        <p class="goods-name">藏美千足金和田玉金镶玉路路通吊坠</p>
+                        <p class="goods-price">￥10000.00</p>
+                    </li>
+                    <li>
+                        <div class="cover">
+                            <a href="#">点击购买</a>
+                        </div>
+                        <img src="./img/img1.jpg" alt="">
+                        <p class="goods-name">藏美千足金和田玉金镶玉路路通吊坠</p>
+                        <p class="goods-price">￥10000.00</p>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+        <a href="javascript:void(0)" class="btn">
+            添加
+        </a>
+    </div>
+
+</body>
+<script>
+    var products = [{
+        img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+        name: '珂兰 黄金手 猴哥款',
+        price: '￥405.00'
+    }, {
+        img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+        name: '珂兰 黄金转运珠 猴哥款',
+        price: '￥100.00'
+    }, {
+        img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+        name: '珂兰 黄金手链 3D猴哥款',
+        price: '￥45.00'
+    }];
+
+
+    $('.btn').on('click', function() {
+        var $ul = $('li.panel ul');
+        var $li = ''
+        for (var i = 0; i < products.length; i++) {
+            $li += '<li> <div class="cover"><a href="#">点击购买</a></div><img src="' + products[i].img + '" alt=""><p class="goods-name">' + products[i].name + '</p><p class="goods-price">' + products[i].price + '</p></li>'
+        }
+        $ul.append($li)
+    })
+</script>
+
+</html>

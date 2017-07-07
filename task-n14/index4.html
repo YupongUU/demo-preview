@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery.min.js">
+    </script>
+    <style>
+        html,
+        a {
+            font-size: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .container {
+            margin: 0 auto;
+            width: 90%;
+            padding-top: 20px;
+        }
+        
+        .tabs {
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+        
+        .tabs li {
+            float: left;
+            width: 33.3%;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+        }
+        
+        .tabs li:not(:last-child)::after {
+            content: '';
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1111;
+            background: #ccc;
+        }
+        
+        .tabs li.active {
+            background: #ddd;
+        }
+        
+        .panel-ct {
+            border: 1px solid #ccc;
+            border-top: none;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .panel {
+            width: 300%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .panel li {
+            float: left;
+            height: 300px;
+            width: 33.333%;
+        }
+        
+        .p1 {
+            background: red;
+        }
+        
+        .p2 {
+            background: yellowgreen;
+        }
+        
+        .p3 {
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="tabs">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div class="panel-ct">
+            <ul class="panel">
+                <li class="p1"></li>
+                <li class="p2"></li>
+                <li class="p3"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $('.tabs li').on("click", function() {
+        $('.tabs li').removeClass('active')
+        $(this).addClass('active')
+        var key = $(this).index();
+        var width = $('.panel-ct').width();
+        var n = '-' + key * width + 'px';
+        $('.panel').animate({
+            left: n
+        }, "300")
+    })
+</script>
+
+</html>
